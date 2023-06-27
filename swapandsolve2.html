@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="swapandsolve.css" type="text/css">
+    <title>Swap and Solve</title>
+</head>
+<body>
+<header>
+    <div class="border_wraps">
+        <nav id="navigation">
+            <ul id="nav_list">
+                <li id="list1">
+                    <h1 id="heading1">Welcome to the gallery!</h1>
+                    <form id="password_form">
+                        <label for="password">Please enter the password:</label>
+                        <input type="password" id="password" name="password">
+                        <button type="submit" class="button">Submit</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div>
+    <p id="main_paragraph"></p>
+</div>
+<main id="main_gallery" class="hidden">
+    <h1 id="title">Gallery</h1>
+    <article id="image1" class="images">
+        <img src="Attack%20on%20Titan.jpg" alt="attackontitan" onclick="toggle('popup1')">
+    </article>
+    <article id="image2" class="images">
+        <img src="JJK.jpg" alt="jujutsu_kaisen" onclick="toggle('popup2')">
+    </article>
+    <article id="image3" class="images">
+        <img src="Demon.jpg" alt="demon" onclick="toggle('popup3')">
+    </article>
+    <article id="image4" class="images">
+        <img src="NS.jpg" alt="naruto" onclick="toggle('popup4')">
+    </article>
+    <article id="image5" class="images">
+        <img src="Haikyuu.jpg" alt="haikyuu" onclick="toggle('popup5')">
+    </article>
+    <article id="image6" class="images">
+        <img src="OnePiece.jpg" alt="onepiece" onclick="toggle('popup6')">
+    </article>
+</main>
+<div id="popup1" class="popups">
+    <img src="Attack%20on%20Titan.jpg" alt="attackontitan">
+    <h1 id="attack_title"></h1>
+    <a href="#" onclick="toggle('popup1')">X</a>
+</div>
+<div id="popup2" class="popups">
+    <h2>2</h2>
+    <a href="#" onclick="toggle('popup2')">X</a>
+</div>
+<div id="popup3" class="popups">
+    <h2>3</h2>
+    <a href="#" onclick="toggle('popup3')">X</a>
+</div>
+<div id="popup4" class="popups">
+    <h2>4</h2>
+    <a href="#" onclick="toggle('popup4')">X</a>
+</div>
+<div id="popup5" class="popups">
+    <h2>5</h2>
+    <a href="#" onclick="toggle('popup5')">X</a>
+</div>
+<div id="popup6" class="popups">
+    <h2>6</h2>
+    <a href="#" onclick="toggle('popup6')">X</a>
+</div>
+<br>
+<footer>
+    <div class="border_wraps">
+        <div id="footer">
+            <ul id="unordered_list">
+                <li class="footer_list">
+                    <a href="#">Contact Us</a>
+                </li>
+                <li class="footer_list">
+                    <a href="#">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<script src="swapandsolve.js"></script>
+</body>
+</html>
