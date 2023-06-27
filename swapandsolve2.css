@@ -140,7 +140,6 @@ a:active{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 600px;
     padding: 50px;
     box-shadow: 0 5px 30px rgba(0,0,0,0.30);
     background: rgba(89,79,79,0.45);
@@ -148,12 +147,64 @@ a:active{
     opacity: 0;
     border-radius: 8px;
     border: solid white 5px;
+    transition-duration: 0.5s;
+    display: grid;
+    width: 50%;
+    grid-gap: 15px 10px;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas:
+    "show_image show_image show_name"
+    "show_image show_image show_releasedate"
+    "show_genre show_seasons show_episodes";
 }
 .popups.active{
     visibility: visible;
     opacity: 1;
 }
-
+#popupContact.active{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.30);
+    background: rgba(89,79,79,0.45);
+    border-radius: 8px;
+    border: solid white 5px;
+    transition-duration: 0.5s;
+}
+/*.popups{*/
+/*    display: grid;*/
+/*    width: 50%;*/
+/*    grid-gap: 15px 10px;*/
+/*    grid-template-columns: 2fr 2fr 1fr;*/
+/*    grid-template-rows: 2fr 1fr;*/
+/*    grid-template-areas:*/
+/*    "show_image show_image show_name"*/
+/*    "show_image show_image show_releasedate"*/
+/*    "show_genre show_seasons show_episodes";*/
+/*}*/
+.show_images{
+    grid-area: show_image;
+    object-fit: cover;
+}
+.show_name{
+    grid-area: show_name;
+}
+.show_release_date{
+    grid-area: show_releasedate;
+}
+.show_genre{
+    grid-area: show_genre;
+}
+.show_seasons{
+    grid-area: show_seasons;
+}
+.show_episodes{
+    grid-area: show_episodes;
+}
 
 @media screen and (max-width:640px){
     #main_gallery{
