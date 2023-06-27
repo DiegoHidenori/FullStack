@@ -85,4 +85,38 @@ const onePiece = new TVShow(
     "1074",
     "Pirate adventures..."
 );
-document.getElementById("attack_title").textContent = attackOnTitan.show_name;
+document.getElementById("attack_name").textContent = "TV Show Name: \n" + attackOnTitan.show_name;
+document.getElementById("attack_releasedate").textContent = "TV Show Release Date: \n" + attackOnTitan.show_release;
+document.getElementById("attack_genre").textContent = "TV Show Genre(s): \n" + attackOnTitan.show_genre;
+document.getElementById("attack_seasons").textContent = "TV Show # of Seasons: " + attackOnTitan.show_seasons;
+document.getElementById("attack_episodes").textContent = "TV Show # of Episodes: " + attackOnTitan.show_episodes;
+
+document.getElementById("jujutsu_name").textContent = "TV Show Name: " + jujutsuKaisen.show_name;
+document.getElementById("jujutsu_releasedate").textContent = "TV Show Release Date: " + jujutsuKaisen.show_release;
+document.getElementById("jujutsu_genre").textContent = "TV Show Genre(s): " + jujutsuKaisen.show_genre;
+document.getElementById("jujutsu_seasons").textContent = "TV Show # of Seasons: " + jujutsuKaisen.show_seasons;
+document.getElementById("jujutsu_episodes").textContent = "TV Show # of Episodes: " + jujutsuKaisen.show_episodes;
+
+document.getElementById("demon_name").textContent = "TV Show Name: " + demonSlayer.show_name;
+document.getElementById("demon_releasedate").textContent = "TV Show Release Date: " + demonSlayer.show_release;
+document.getElementById("demon_genre").textContent = "TV Show Genre(s): " + demonSlayer.show_genre;
+document.getElementById("demon_seasons").textContent = "TV Show # of Seasons: " + demonSlayer.show_seasons;
+document.getElementById("demon_episodes").textContent = "TV Show # of Episodes: " + demonSlayer.show_episodes;
+
+document.getElementById("ns_name").textContent = "TV Show Name: " + narutoShippuden.show_name;
+document.getElementById("ns_releasedate").textContent = "TV Show Release Date: " + narutoShippuden.show_release;
+document.getElementById("ns_genre").textContent = "TV Show Genre(s): " + narutoShippuden.show_genre;
+document.getElementById("ns_seasons").textContent = "TV Show # of Seasons: " + narutoShippuden.show_seasons;
+document.getElementById("ns_episodes").textContent = "TV Show # of Episodes: " + narutoShippuden.show_episodes;
+
+document.getElementById("haikyuu_name").textContent = "TV Show Name: " + haikyuu.show_name;
+document.getElementById("haikyuu_releasedate").textContent = "TV Show Release Date: " + haikyuu.show_release;
+document.getElementById("haikyuu_genre").textContent = "TV Show Genre(s): " + haikyuu.show_genre;
+document.getElementById("haikyuu_seasons").textContent = "TV Show # of Seasons: " + haikyuu.show_seasons;
+document.getElementById("haikyuu_episodes").textContent = "TV Show # of Episodes: " + haikyuu.show_episodes;
+
+document.getElementById("onepiece_name").textContent = "TV Show Name: " + onePiece.show_name;
+document.getElementById("onepiece_releasedate").textContent = "TV Show Release Date: " + onePiece.show_release;
+document.getElementById("onepiece_genre").textContent = "TV Show Genre(s): " + onePiece.show_genre;
+document.getElementById("onepiece_seasons").textContent = "TV Show # of Seasons: " + onePiece.show_seasons;
+document.getElementById("onepiece_episodes").textContent = "TV Show # of Episodes: " + onePiece.show_episodes;
