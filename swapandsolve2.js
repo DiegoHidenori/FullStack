@@ -1,6 +1,8 @@
 const heading = document.getElementById("heading1");
 const mainP = document.getElementById("main_paragraph");
-document.getElementById("main_paragraph").innerHTML = "Login to view gallery...";
+const galleryAlert = ['Login ', 'to ', 'view ', 'gallery ', '...'];
+console.log(...galleryAlert);
+document.getElementById("main_paragraph").innerHTML = galleryAlert.join(' ');
 mainP.style.textAlign = "center";
 mainP.style.color = "#E5FCC2";
 document.getElementById("password_form").addEventListener("submit", function (display_content) {
@@ -15,13 +17,12 @@ document.getElementById("password_form").addEventListener("submit", function (di
     }
 });
 
-function toggle(popupID){
-    // this.popup = document.getElementById('')
+const toggle = (popupID) => {
     let blur = document.getElementById('main_gallery');
-    blur.classList.toggle('active')
+    blur.classList.toggle('active');
     let popup = document.getElementById(popupID);
-    popup.classList.toggle('active')
-}
+    popup.classList.toggle('active');
+};
 
 function TVShow(name, release_date, genre, seasons, episodes, description){
     this.show_name = name;
@@ -85,38 +86,45 @@ const onePiece = new TVShow(
     "1074",
     "Pirate adventures..."
 );
-document.getElementById("attack_name").textContent = "TV Show Name: \n" + attackOnTitan.show_name;
-document.getElementById("attack_releasedate").textContent = "TV Show Release Date: \n" + attackOnTitan.show_release;
-document.getElementById("attack_genre").textContent = "TV Show Genre(s): \n" + attackOnTitan.show_genre;
-document.getElementById("attack_seasons").textContent = "TV Show # of Seasons: " + attackOnTitan.show_seasons;
-document.getElementById("attack_episodes").textContent = "TV Show # of Episodes: " + attackOnTitan.show_episodes;
 
-document.getElementById("jujutsu_name").textContent = "TV Show Name: " + jujutsuKaisen.show_name;
-document.getElementById("jujutsu_releasedate").textContent = "TV Show Release Date: " + jujutsuKaisen.show_release;
-document.getElementById("jujutsu_genre").textContent = "TV Show Genre(s): " + jujutsuKaisen.show_genre;
-document.getElementById("jujutsu_seasons").textContent = "TV Show # of Seasons: " + jujutsuKaisen.show_seasons;
-document.getElementById("jujutsu_episodes").textContent = "TV Show # of Episodes: " + jujutsuKaisen.show_episodes;
+function popupContent(popupContentID, popupContent){
+    const line = document.getElementById(popupContentID);
+    if(line){
+        line.textContent = popupContent;
+    }
+}
+popupContent("attack_name", "TV Show Name: " + attackOnTitan.show_name);
+popupContent("attack_releasedate", "TV Show Release Date: " + attackOnTitan.show_release);
+popupContent("attack_genre", "TV Show Genre(s): " + attackOnTitan.show_genre);
+popupContent("attack_seasons", "TV Show # of Seasons: " + attackOnTitan.show_seasons);
+popupContent("attack_episodes", "TV Show # of Episodes: " + attackOnTitan.show_episodes);
 
-document.getElementById("demon_name").textContent = "TV Show Name: " + demonSlayer.show_name;
-document.getElementById("demon_releasedate").textContent = "TV Show Release Date: " + demonSlayer.show_release;
-document.getElementById("demon_genre").textContent = "TV Show Genre(s): " + demonSlayer.show_genre;
-document.getElementById("demon_seasons").textContent = "TV Show # of Seasons: " + demonSlayer.show_seasons;
-document.getElementById("demon_episodes").textContent = "TV Show # of Episodes: " + demonSlayer.show_episodes;
+popupContent("jujutsu_name", "TV Show Name: " + jujutsuKaisen.show_name);
+popupContent("jujutsu_releasedate", "TV Show Release Date: " + jujutsuKaisen.show_release);
+popupContent("jujutsu_genre", "TV Show Genre(s): " + jujutsuKaisen.show_genre);
+popupContent("jujutsu_seasons", "TV Show # of Seasons: " + jujutsuKaisen.show_seasons);
+popupContent("jujutsu_episodes", "TV Show # of Episodes: " + jujutsuKaisen.show_episodes);
 
-document.getElementById("ns_name").textContent = "TV Show Name: " + narutoShippuden.show_name;
-document.getElementById("ns_releasedate").textContent = "TV Show Release Date: " + narutoShippuden.show_release;
-document.getElementById("ns_genre").textContent = "TV Show Genre(s): " + narutoShippuden.show_genre;
-document.getElementById("ns_seasons").textContent = "TV Show # of Seasons: " + narutoShippuden.show_seasons;
-document.getElementById("ns_episodes").textContent = "TV Show # of Episodes: " + narutoShippuden.show_episodes;
+popupContent("demon_name", "TV Show Name: " + demonSlayer.show_name);
+popupContent("demon_releasedate", "TV Show Release Date: " + demonSlayer.show_release);
+popupContent("demon_genre", "TV Show Genre(s): " + demonSlayer.show_genre);
+popupContent("demon_seasons", "TV Show # of Seasons: " + demonSlayer.show_seasons);
+popupContent("demon_episodes", "TV Show # of Episodes: " + demonSlayer.show_episodes);
 
-document.getElementById("haikyuu_name").textContent = "TV Show Name: " + haikyuu.show_name;
-document.getElementById("haikyuu_releasedate").textContent = "TV Show Release Date: " + haikyuu.show_release;
-document.getElementById("haikyuu_genre").textContent = "TV Show Genre(s): " + haikyuu.show_genre;
-document.getElementById("haikyuu_seasons").textContent = "TV Show # of Seasons: " + haikyuu.show_seasons;
-document.getElementById("haikyuu_episodes").textContent = "TV Show # of Episodes: " + haikyuu.show_episodes;
+popupContent("ns_name", "TV Show Name: " + narutoShippuden.show_name);
+popupContent("ns_releasedate", "TV Show Release Date: " + narutoShippuden.show_release);
+popupContent("ns_genre", "TV Show Genre(s): " + narutoShippuden.show_genre);
+popupContent("ns_seasons", "TV Show # of Seasons: " + narutoShippuden.show_seasons);
+popupContent("ns_episodes", "TV Show # of Episodes: " + narutoShippuden.show_episodes);
 
-document.getElementById("onepiece_name").textContent = "TV Show Name: " + onePiece.show_name;
-document.getElementById("onepiece_releasedate").textContent = "TV Show Release Date: " + onePiece.show_release;
-document.getElementById("onepiece_genre").textContent = "TV Show Genre(s): " + onePiece.show_genre;
-document.getElementById("onepiece_seasons").textContent = "TV Show # of Seasons: " + onePiece.show_seasons;
-document.getElementById("onepiece_episodes").textContent = "TV Show # of Episodes: " + onePiece.show_episodes;
+popupContent("haikyuu_name", "TV Show Name: " + haikyuu.show_name);
+popupContent("haikyuu_releasedate", "TV Show Release Date: " + haikyuu.show_release);
+popupContent("haikyuu_genre", "TV Show Genre(s): " + haikyuu.show_genre);
+popupContent("haikyuu_seasons", "TV Show # of Seasons: " + haikyuu.show_seasons);
+popupContent("haikyuu_episodes", "TV Show # of Episodes: " + haikyuu.show_episodes);
+
+popupContent("onepiece_name", "TV Show Name: " + onePiece.show_name);
+popupContent("onepiece_releasedate", "TV Show Release Date: " + onePiece.show_release);
+popupContent("onepiece_genre", "TV Show Genre(s): " + onePiece.show_genre);
+popupContent("onepiece_seasons", "TV Show # of Seasons: " + onePiece.show_seasons);
+popupContent("onepiece_episodes", "TV Show # of Episodes: " + onePiece.show_episodes);
