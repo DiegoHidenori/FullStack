@@ -1,6 +1,6 @@
 "use strict";
 
-//Function 1: Number of digits in an argument
+// Function 1: Number of digits in an argument
 console.log("This is function 1:");
 function _findNumOfDigits(arg){
     const digitSearch = /\d/g;
@@ -18,82 +18,51 @@ let stringNumDigits = _findNumOfDigits("aoidfjo2093 23090faodsk");
 
 // Function 2: Surplus function
 console.log("\n" + "This is function 2:");
-// function _surplus(str){
-//     function innerFunction(){
-//         let stringInner = '\"\"';
-//         if(str){
-//             stringInner = str;
-//         }
-//         return stringInner;
-//     }
-//     console.log(innerFunction());
-//     return innerFunction();
-// }
-// let stringReturnsString = _surplus("");
-// console.log(stringReturnsString);
-
-function _surplus(string){
-    return function inner(){
-        return string;
-    };
+function _surplus(str){
+    function innerFunction(){
+        return str;
+    }
+    return innerFunction;
 }
-let stringReturnsString = _surplus("Hello","gorilla");
-console.log(stringReturnsString);
-
-
+let stringReturnsString = _surplus("Hello darkness my old friend");
+console.log(stringReturnsString());
 
 
 // Function 3: String with numbers
 console.log("\n" + "This is function 3:");
-
-function _strNumbers(array){
+function _strNumbers(arr){
     let withNumbers = [];
     const digitSearch = /\d/;
-    for(let listNum = 0; listNum < array.length; listNum++){
-        let arrayNum = digitSearch.test(array[listNum]);
+    for(let listNum = 0; listNum < arr.length; listNum++){
+        let arrayNum = digitSearch.test(arr[listNum]);
         if(arrayNum){
-            withNumbers.push(array[listNum]);
+            withNumbers.push(arr[listNum]);
         }
     }
     return withNumbers;
 }
-const functionList = ["wutf 6", "oaisdf23"];
+const functionList = ["donk3ys63", "43el3phants", "dogsandcats"];
 const functionResults = _strNumbers(functionList);
 console.log("Final arrays are: ", functionResults);
 
-// function _strNumbers(array) {
-//     let withNumbers = [];
-//     const digitSearch = /\d/;
-//     for (let listNum = 0; listNum < array.length; listNum++) {
-//         if (digitSearch.test(array[listNum])) {
-//             withNumbers.push(array[listNum]);
-//         }
-//     }
-//     return withNumbers;
-// }
-// const functionList = ["wutf 6"];
-// const functionResults = _strNumbers(functionList);
-// console.log("Final arrays are:", functionResults);
 
-
-//Function 4: Class grading
+// Function 4: Class grading
 console.log("\n" + "This is function 4:");
-function _determineClassGrading(array){
+function _determineClassGrading(arr){
     let passingCounter = 0;
     let failingCounter = 0;
     let totalGrades = 0;
-    for(let c = 0; c < array.length; c++){
-        totalGrades += array[c];
-        if(array[c] >= 50){
+    for(let c = 0; c < arr.length; c++){
+        totalGrades += arr[c];
+        if(arr[c] >= 50){
             passingCounter++;
         }
         else{
             failingCounter++;
         }
     }
-    const gradeAverage = totalGrades / array.length;
-    // const gradeAverageRounded = gradeAverage.toFixed(1);
-    const gradeAverageRounded = Math.round(gradeAverage*10)/10;
+    const gradeAverage = totalGrades / arr.length;
+    const gradeAverageRounded = parseFloat(gradeAverage.toFixed(1));
     console.log("Passing grades: ", passingCounter);
     console.log("Failing grades: ", failingCounter);
     console.log("Average grade: ", gradeAverageRounded);
@@ -104,18 +73,18 @@ const function4 = _determineClassGrading(classGrades);
 console.log(function4);
 
 
-//Function 5: Move capital letters
+// Function 5: Move capital letters
 console.log("\n" + "This is function 5:");
 const _moveCapitalLetters = (str) => {
-    const capitalLetters = [];
+    const upperCaseLetters = [];
     const lowerCaseLetters = [];
-    for(let c=0; c<str.length; c++){
-        if(str[c]===str[c].toUpperCase()){
-            capitalLetters.push(str[c]);
+    for(let c = 0; c < str.length; c++){
+        if(str[c] === str[c].toUpperCase()){
+            upperCaseLetters.push(str[c]);
         }
         else{
             lowerCaseLetters.push(str[c]);
         }
     }
-    return capitalLetters.join('') + lowerCaseLetters.join('');
+    return upperCaseLetters.join('') + lowerCaseLetters.join('');
 };
