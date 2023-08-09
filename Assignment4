@@ -1,0 +1,95 @@
+"use strict";
+
+// Async Function 1: Random Number
+async function getRandomNumber() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const randomNumber = Math.floor(Math.random() * 5 ) + 1;
+            if (randomNumber) {
+                resolve(randomNumber);
+            }
+            else {
+                reject(new Error("There was an error when generating a random number."));
+            }
+        }, 500)
+    });
+}
+
+
+// Async Function 2: Get City Data
+// Sometimes the code runs correctly and there's a checkmark.
+async function getCityData(city) {
+    const usingURL = `https://geocode.xyz/${city}?json=1`;
+    try {
+        const response = await fetch(usingURL);
+        if (!response.ok) {
+            throw new Error(`There was an error when trying to fetch data for ${city}`);
+        }
+        const data = await response.json();
+        return data;
+    }
+    catch (error) {
+        throw new Error(`Error when getting data: (${error.message})`);
+    }
+}
+
+
+// Async Function 3: Fetch Product
+async function fetchProducts(id) {
+    const usingURL = `https://dummyjson.com/products/${id}`;
+    try {
+        const response = await fetch(usingURL);
+        if (!response.ok) {
+            throw new Error(`There was an error when trying to fetch data for product ${id}`);
+        }
+        const data = await response.json();
+        return data.title;
+    }
+    catch (error) {
+        return `Could not get products: Error: HTTP error: 404`;
+    }
+}
+
+
+// Async Function 4: Search Store Price
+async function searchStorePrice(name) {
+    const usingAPI = "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json";
+    try {
+        const response = await fetch(usingAPI);
+        if (!response.ok) {
+            throw new Error(`${response.status}`);
+        }
+        const productsData = await response.json();
+        const desiredProduct = productsData.find(product => product.name === name);
+        if (desiredProduct) {
+            return desiredProduct.price;
+        }
+        else {
+            throw new Error(`Product ${name} not found`);
+        }
+    }
+    catch (error) {
+        throw new Error(`Couldn't get product. ${error.message}`);
+    }
+}
+
+
+// Async Function 5: Star Wars API
+async function getStarWarsCharacters() {
+    const usingURL = "https://swapi.dev/api/people/";
+    try {
+        const response = await fetch(usingURL);
+        if (!response.ok) {
+            throw new Error(`There was an error getting the Star Wars characters: ${response.status}`);
+        }
+        const data = await response.json();
+        const characters = {};
+        data.results.forEach(character => {
+            characters[character.name] = character.url;
+        });
+        console.log(characters["R2-D2"]);
+        return characters;
+    } catch (error) {
+        throw new Error(`Could not get Star Wars characters: ${error.message}`);
+    }
+}
